@@ -40,4 +40,26 @@ Docker-compose là công cụ giúp bạn quản lý và chạy hệ thống g�
 | depends_on    | Quy định thứ tự khởi động (Container A phải chạy trước container B). | depends_on: - mariadb (Flask đợi MariaDB chạy xong mới chạy). |
 | restart    | Tự động khởi động lại container nếu bị lỗi hoặc máy chủ reboot. | restart: always |
 
+### 3. Ưu điểm khi triển khai ứng dụng bằng Docker
 
+- **Tính nhất quán (Consistency)**: Giải quyết triệt để câu nói "Nhưng trên máy code của em vẫn chạy được mà!". Chạy trên laptop cá nhân hay máy chủ thật đều y hệt nhau.
+
+- **Tiết kiệm tài nguyên**: Container chia sẻ tài nguyên phần cứng trực tiếp với máy host, không tốn tài nguyên cho hệ điều hành ảo hóa như Hyper-V.
+
+- **Triển khai nhanh chóng (Speed)**: Tạo mới, hủy bỏ, nâng cấp ứng dụng chỉ mất vài giây bằng câu lệnh.
+
+- **Cách ly an toàn (Isolation)**: Mỗi container là một môi trường độc lập. Lỗi của container này không làm sập container khác.
+
+### 4. Quy trình triển khai App lên Máy chủ thật KHÔNG CÓ INTERNET (Môi trường Air-gapped)
+
+Khi máy chủ thật không có internet, bạn không thể dùng lệnh docker pull để tải image từ mạng. Bạn cần làm như sau trên Laptop cá nhân (có internet) trước:</p>
+
+- Bước 1: Tải các image cần thiết về laptop: docker pull nginx:latest
+
+- Bước 2: Đóng gói image thành file nén .tar: `docker save -o nginx_image.tar nginx:latest`
+
+- Bước 3: Dùng USB, ổ cứng di động sao chép các file .tar và toàn bộ thư mục chứa mã nguồn (docker-compose.yml, code Flask, code HTML...) sang máy chủ thật.
+
+- Bước 4: Tại máy chủ thật, giải nén và nạp image vào Docker: `docker load -i nginx_image.tar`
+
+- Bước 5: Chạy ứng dụng bằng lệnh: `docker compose up -d`
