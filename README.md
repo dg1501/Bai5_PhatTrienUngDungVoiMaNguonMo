@@ -176,5 +176,9 @@ Thêm nội dung:
 
 <img width="1354" height="734" alt="{70734F18-6F4F-4C3D-B599-63B703BF859C}" src="https://github.com/user-attachments/assets/3c2a8629-963a-45fe-a057-ed68a638034a" /></p>
 
+**Bước 3**: Bước 4: Logic và Cấu hình Node-RED (Lấy dữ liệu, Lưu DB, Bắn Telegram)
 
+- Sau khi chạy lệnh khởi động `docker compose up -d`
+
+- Vào trình duyệt gõ http://localhost:1880 để cấu hình Node-RED bằng giao diện kéo thả.
 
