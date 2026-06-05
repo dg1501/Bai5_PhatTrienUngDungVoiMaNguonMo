@@ -63,3 +63,20 @@ Khi máy chủ thật không có internet, bạn không thể dùng lệnh docke
 - Bước 4: Tại máy chủ thật, giải nén và nạp image vào Docker: `docker load -i nginx_image.tar`
 
 - Bước 5: Chạy ứng dụng bằng lệnh: `docker compose up -d`
+
+---
+
+## B. THỰC HÀNH ÁP DỤNG
+
+Chúng ta sẽ tạo một thư mục dự án tên là **app-monitor**. Cấu trúc thư mục chuẩn cho bài này như sau:
+
+```text
+app-monitor/
+├── docker-compose.yml
+├── api/
+│   ├── app.py
+│   └── requirements.txt
+├── web/
+│   └── index.html
+└── nginx/
+    └── default.conf
