@@ -80,3 +80,9 @@ app-monitor/
 │   └── index.html
 └── nginx/
     └── default.conf
+```
+
+### 1. Tạo thư mục dự án app-monitor
+
+`
+
