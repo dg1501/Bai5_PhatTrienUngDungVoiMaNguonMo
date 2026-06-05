@@ -180,5 +180,7 @@ Thêm nội dung:
 
 - Sau khi chạy lệnh khởi động `docker compose up -d`
 
-- Vào trình duyệt gõ http://localhost:1880 để cấu hình Node-RED bằng giao diện kéo thả.
+- Vào trình duyệt gõ `http://localhost:1882` để cấu hình Node-RED bằng giao diện kéo thả.
+
+
 
