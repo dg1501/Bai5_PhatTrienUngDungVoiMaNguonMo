@@ -84,5 +84,31 @@ app-monitor/
 
 ### 1. Tạo thư mục dự án app-monitor
 
-`
+- Sử dụng lệnh `sudo mkdir app-monitor` để tạo thư mục dự án.</p>
+- Lệnh `cd app-monitor` để vào thư mục dự án vừa tạo.
+
+<img width="1350" height="735" alt="{44FC1FB4-92A8-42DA-8214-CA61174E0A42}" src="https://github.com/user-attachments/assets/766a549b-5917-4407-adf3-6c1e82a7e188" /></p>
+
+### 2. Tạo File cấu hình hệ Thống docker-compose.yml
+
+- Chạy lệnh `sudo nano docker-compose.yml`
+
+- Sau đó gõ 1 ký tự bất kì vào File -> Mục đích để có thể khiến File tồn tại.
+
+<img width="1346" height="734" alt="{FDA5830B-2745-4DC5-A693-9DB08D3F23EA}" src="https://github.com/user-attachments/assets/ed236369-7365-4f08-9940-bd548e7a81a2" /></p>
+
+- Tiếp theo tiến hành thêm nội dung cho file
+
+<img width="1349" height="741" alt="{DAB85491-416C-4909-B950-A0817EB67374}" src="https://github.com/user-attachments/assets/ff4781e6-2814-48d1-b9d8-c699075d8614" /></p>
+
+- Chi tiết về từng Sevice trong File cấu hình: </p>
+
+| Dịch vụ (Service) | Công nghệ / Hình ảnh | Tác dụng / Nhiệm vụ chính | Nội dung cấu hình kỹ thuật |
+| :--- | :---: | :--- | :--- |
+| **`mariadb`** | MariaDB 10.6 | Lưu trữ cấu hình, trạng thái hiện tại (on/off, online/offline) của thiết bị cần truy xuất nhanh. | Cổng `3306` • DB: `monitor_db` • Khởi động cùng hệ thống • Lưu dữ liệu bền vững qua volume `mariadb_data`. |
+| **`influxdb`** | InfluxDB 1.8 | Lưu dữ liệu chuỗi thời gian (Time-series), gom các thông số đo lường liên tục (nhiệt độ, độ ẩm...) để vẽ lịch sử. | Cổng `8086` • DB: `history_db` • Khởi động cùng hệ thống • Lưu dữ liệu qua volume `influxdb_data`. |
+| **`nodered`** | Node-RED | Trạm trung chuyển dữ liệu (thu thập từ IoT), ghi vào DB và xử lý logic để gửi cảnh báo qua Telegram. | Cổng `1880` • Lưu flows qua `nodered_data` • Chỉ chạy sau khi `mariadb` và `influxdb` đã sẵn sàng. |
+| **`grafana`** | Grafana | Lấy dữ liệu từ 2 DB để trực quan hóa thành các biểu đồ, đồ thị, đồng hồ đo trên Dashboard. | Cổng `3000` • Cấu hình lưu qua `grafana_data` • Cho phép nhúng iframe và cho phép xem ẩn danh không cần login. |
+| **`flask-api`** | Python 3.9-slim | Đọc dữ liệu từ MariaDB, xử lý logic Backend rồi trả về định dạng JSON sạch cho Frontend sử dụng. | Cổng `5000` • Đồng bộ code từ thư mục `./api` • Tự động cài `requirements.txt` và chạy `app.py` • Phụ thuộc vào `mariadb`. |
+| **`nginx`** | Nginx Alpine | "Mặt tiền" của hệ thống, làm máy chủ chứa giao diện người dùng và điều hướng request (Reverse Proxy) đến Flask API. | Cổng `80` • Đồng bộ giao diện từ `./web` và file cấu hình `./nginx/default.conf` • Chỉ chạy sau khi `flask-api` đã sẵn sàng. |
 
