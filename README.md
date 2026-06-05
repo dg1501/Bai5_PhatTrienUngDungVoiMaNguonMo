@@ -112,3 +112,40 @@ app-monitor/
 | **`flask-api`** | Python 3.9-slim | Đọc dữ liệu từ MariaDB, xử lý logic Backend rồi trả về định dạng JSON sạch cho Frontend sử dụng. | Cổng `5000` • Đồng bộ code từ thư mục `./api` • Tự động cài `requirements.txt` và chạy `app.py` • Phụ thuộc vào `mariadb`. |
 | **`nginx`** | Nginx Alpine | "Mặt tiền" của hệ thống, làm máy chủ chứa giao diện người dùng và điều hướng request (Reverse Proxy) đến Flask API. | Cổng `80` • Đồng bộ giao diện từ `./web` và file cấu hình `./nginx/default.conf` • Chỉ chạy sau khi `flask-api` đã sẵn sàng. |
 
+### 3. Viết Flask API
+
+- Tạo thư mục ***api*** bên trong ***app-monitor***
+
+<img width="1352" height="732" alt="{DF1322FC-9461-4E78-A94B-B1F1FB50E6ED}" src="https://github.com/user-attachments/assets/14d5075c-f1fd-476c-bc76-01b4a8081737" /></p>
+
+- Bên trong ***api** tạo 2 file ***app.py*** và ***requirements.txt***
+
+<img width="1078" height="585" alt="{8A6E9A5E-ACF0-4298-9903-379E6834C85D}" src="https://github.com/user-attachments/assets/1dab392b-6fd1-42d3-97a4-5e9f1dd7970a" /></p>
+
+File requirements.txt
+
+- **Flask (Bộ khung API)**: Dùng để tạo Web Server ở cổng 5000 và định nghĩa các đường dẫn (như /api/realtime) để trả về dữ liệu dạng JSON cho giao diện.
+
+- **Flask-CORS (Cửa gác bảo mật)**: Cho phép giao diện (Frontend chạy ở cổng 80 của Nginx) có quyền gọi và lấy dữ liệu từ Backend (chạy ở cổng 5000) mà không bị trình duyệt chặn lỗi bảo mật.
+
+- **mysql-connector-python (Cầu nối Database)**: Là driver giúp code Python "nói chuyện" với MariaDB, gửi câu lệnh SQL (SELECT...) vào database để lấy dữ liệu về cho Flask xử lý.
+
+<img width="1355" height="745" alt="{53849D8B-7730-4857-B6D3-E5CB722121DC}" src="https://github.com/user-attachments/assets/32d71f54-daa0-4eae-9e01-3ba0d618c956" /></p>
+
+File app.py
+
+- **CORS(app)**: Kích hoạt tính năng thông tuyến bảo mật, cho phép giao diện Frontend (Nginx cổng 80) thoải mái lấy dữ liệu từ Backend mà không bị trình duyệt chặn lỗi.
+
+- **get_db_connection()**: Khởi tạo đường truyền tới MariaDB. Nhờ mạng nội bộ của Docker, nó có thể gọi thẳng tên host là "mariadb" thay vì dùng địa chỉ IP.
+
+- **@app.route('/api/realtime')**: Tạo một đường dẫn API (endpoint). Khi có ai truy cập vào, nó sẽ chạy câu lệnh SQL để móc dữ liệu giá vàng mới nhất (LIMIT 1) trong database ra.
+
+- **jsonify(result)**: Chuyển đổi dữ liệu thô lấy từ MariaDB thành định dạng chuỗi JSON tiêu chuẩn và gửi trả về cho Frontend hiển thị lên màn hình.
+
+<img width="1351" height="743" alt="{83041228-2030-4BA8-A920-FC8C110BD999}" src="https://github.com/user-attachments/assets/721eeebe-937d-4f24-a32f-c76701b88cf6" /></p>
+
+
+
+
+
+
