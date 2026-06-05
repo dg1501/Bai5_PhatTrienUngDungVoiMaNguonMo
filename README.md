@@ -31,5 +31,13 @@ Docker-compose là công cụ giúp bạn quản lý và chạy hệ thống g�
 
 | Từ khóa   | Ý nghĩa   | Ví dụ minh họa |
 | --------- | --------- | --------- |
-| image    | Chỉ định Docker Image được dùng để tạo container (tải từ Docker Hub). | Dữ liệu B |
-| Dòng 2    | Dữ liệu C | Dữ liệu D |
+| image    | Chỉ định Docker Image được dùng để tạo container (tải từ Docker Hub). | image: mariadb:10.6 |
+| container_nam    | Đặt tên cố định cho container thay vì để Docker tự sinh tên ngẫu nhiên. | container_name: my_mariadb |
+| ports    | Ánh xạ cổng từ Máy thật (Host) vào bên trong Container theo cấu hình Host:Container. | ports: - "8080:80" (Vào web qua cổng 8080 của máy thật). |
+| environment    | Khai báo các biến môi trường (cấu hình, password, tài khoản...). | environment: - MYSQL_ROOT_PASSWORD=secret |
+| volumes    | Gắn một thư mục máy thật vào container để lưu dữ liệu hoặc đồng bộ code. | volumes: - ./html:/usr/share/nginx/html |
+| networks    | Chỉ định container này thuộc mạng nội bộ nào. | networks: - monitor-net |
+| depends_on    | Quy định thứ tự khởi động (Container A phải chạy trước container B). | depends_on: - mariadb (Flask đợi MariaDB chạy xong mới chạy). |
+| restart    | Tự động khởi động lại container nếu bị lỗi hoặc máy chủ reboot. | restart: always |
+
+
