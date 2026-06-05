@@ -79,7 +79,7 @@ app-monitor/
 ├── web/
 │   └── index.html
 └── nginx/
-    └── default.conf
+    └── nginx.conf
 ```
 
 ### 1. Tạo thư mục dự án app-monitor
@@ -88,6 +88,8 @@ app-monitor/
 - Lệnh `cd app-monitor` để vào thư mục dự án vừa tạo.
 
 <img width="1350" height="735" alt="{44FC1FB4-92A8-42DA-8214-CA61174E0A42}" src="https://github.com/user-attachments/assets/766a549b-5917-4407-adf3-6c1e82a7e188" /></p>
+
+---
 
 ### 2. Tạo File cấu hình hệ Thống docker-compose.yml
 
@@ -112,6 +114,8 @@ app-monitor/
 | **`flask-api`** | Python 3.9-slim | Đọc dữ liệu từ MariaDB, xử lý logic Backend rồi trả về định dạng JSON sạch cho Frontend sử dụng. | Cổng `5000` • Đồng bộ code từ thư mục `./api` • Tự động cài `requirements.txt` và chạy `app.py` • Phụ thuộc vào `mariadb`. |
 | **`nginx`** | Nginx Alpine | "Mặt tiền" của hệ thống, làm máy chủ chứa giao diện người dùng và điều hướng request (Reverse Proxy) đến Flask API. | Cổng `80` • Đồng bộ giao diện từ `./web` và file cấu hình `./nginx/default.conf` • Chỉ chạy sau khi `flask-api` đã sẵn sàng. |
 
+---
+
 ### 3. Viết Flask API
 
 - Tạo thư mục ***api*** bên trong ***app-monitor***
@@ -120,7 +124,7 @@ app-monitor/
 
 - Bên trong ***api** tạo 2 file ***app.py*** và ***requirements.txt***
 
-<img width="1078" height="585" alt="{8A6E9A5E-ACF0-4298-9903-379E6834C85D}" src="https://github.com/user-attachments/assets/1dab392b-6fd1-42d3-97a4-5e9f1dd7970a" /></p>
+<img width="1082" height="591" alt="{B3EA851A-0B72-48A9-92DB-98FE705FAEF1}" src="https://github.com/user-attachments/assets/9a54cafd-2422-4839-b42b-15585d6750c0" /></p>
 
 File requirements.txt
 
@@ -144,8 +148,33 @@ File app.py
 
 <img width="1351" height="743" alt="{83041228-2030-4BA8-A920-FC8C110BD999}" src="https://github.com/user-attachments/assets/721eeebe-937d-4f24-a32f-c76701b88cf6" /></p>
 
+---
 
+### 4. Cấu Hình Nginx và Front-end HTML/JS
 
+**Bước 1:** Tạo thư mục nginx và file nginx.conf để cấu hình Nginx tránh lỗi bảo mật khi gọi Iframe hoặc API:
+
+<img width="1353" height="740" alt="{CCED9159-45BD-488C-927E-4111FCDEB513}" src="https://github.com/user-attachments/assets/e766d432-77da-43b7-a8f1-2d62d6a966bc" /></p>
+
+Thêm nội dung
+
+<img width="1345" height="726" alt="{DE06CDA8-3719-483C-A729-08FA8A688816}" src="https://github.com/user-attachments/assets/79ea044f-b2b7-4879-beb3-4ef7f9d15779" /></p>
+
+- listen 80: Mở cổng mạng 80 (cổng HTTP mặc định) để người dùng có thể truy cập vào giao diện trang web từ trình duyệt.
+
+- server_name localhost: Định danh tên miền cho máy chủ là localhost (truy cập trực tiếp bằng IP máy hoặc qua cổng local).
+
+- location /: Tiếp nhận tất cả các yêu cầu truy cập thông thường đổ vào trang chủ (đường dẫn gốc /).
+
+- root và index: Chỉ định thư mục chứa giao diện là /usr/share/nginx/html và tự động tải file index.html lên màn hình khi người dùng truy cập.
+
+**Bước 2:** Tạo thư mục web và file web/index.html:
+
+<img width="1095" height="629" alt="{4789A514-E45B-4790-B42E-3728E6F4E593}" src="https://github.com/user-attachments/assets/06fd27a3-9089-4221-9555-e075b9b7a60a" /></p>
+
+Thêm nội dung:
+
+<img width="1354" height="734" alt="{70734F18-6F4F-4C3D-B599-63B703BF859C}" src="https://github.com/user-attachments/assets/3c2a8629-963a-45fe-a057-ed68a638034a" /></p>
 
 
 
