@@ -188,7 +188,7 @@ Thêm nội dung:
 
 <img width="1920" height="1026" alt="{AADF4540-2496-4733-8EB3-78865F29F987}" src="https://github.com/user-attachments/assets/d21dc690-913c-4a6f-8688-428f917606e5" /></p>
 
-**BƯỚC 4**: Cài đặt thư viện phụ trợ trong Node-RED:
+**Bước 4**: Cài đặt thư viện phụ trợ trong Node-RED:
 
 Vào góc phải trên cùng -> Manage palette -> Thẻ Install -> Tìm và cài các node:
 
@@ -204,5 +204,16 @@ Vào góc phải trên cùng -> Manage palette -> Thẻ Install -> Tìm và cài
 
 <img width="1277" height="681" alt="{55196EB6-6A84-446D-ACE7-8FD90531679E}" src="https://github.com/user-attachments/assets/67b07010-50d2-4b2e-a00c-9402e75b846c" /></p>
 
+**Bước 5**: Luồng xử lý dữ liệu (Kéo thả Node)
 
+- Node Inject (Mốc thời gian): Cấu hình lặp lại sau mỗi 5 giây (Interval: every 5 seconds).
 
+<img width="1920" height="1022" alt="{A21E833F-51B6-40E2-9196-91756C2DCA84}" src="https://github.com/user-attachments/assets/44596768-8fd4-4799-9492-f759f513e203" /></p>
+
+- Node HTTP Request: Gọi API lấy giá vàng/chứng khoán thực tế. Bạn có thể dùng API miễn phí như: https://api.coindesk.com/v1/bpi/currentprice.json (Lấy giá Bitcoin).
+
+<img width="1920" height="1027" alt="{A45CD169-FA98-4FC2-A01B-0F35B52DB69A}" src="https://github.com/user-attachments/assets/57711da9-0f43-41e2-ac61-65180bf3fa7c" /></p>
+
+- Node Function (Phân tách dữ liệu): Viết code JS nhỏ để lấy giá trị số:
+
+<img width="1920" height="1026" alt="{3A8664C0-ACC2-4159-959B-21F951C37A93}" src="https://github.com/user-attachments/assets/1b240de5-4ac3-4fe8-9511-e8b0b8e8e08d" /></p>
