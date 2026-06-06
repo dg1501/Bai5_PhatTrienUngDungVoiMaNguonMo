@@ -179,8 +179,30 @@ Thêm nội dung:
 **Bước 3**: Bước 4: Logic và Cấu hình Node-RED (Lấy dữ liệu, Lưu DB, Bắn Telegram)
 
 - Sau khi chạy lệnh khởi động `docker compose up -d`
+  
+<img width="1361" height="720" alt="{07F03A40-E6C8-4A82-8A01-E58D9B2FA54A}" src="https://github.com/user-attachments/assets/5ef5bb38-d9cf-45f9-a922-5553bb68a693" /></p>
 
-- Vào trình duyệt gõ `http://localhost:1882` để cấu hình Node-RED bằng giao diện kéo thả.
+<img width="1348" height="709" alt="{BDC92DD6-5E50-4953-B7BD-F4104E05F4AC}" src="https://github.com/user-attachments/assets/1fef0cbf-3a46-4b11-a71e-7ec011398da1" /></p>
+
+- Vào trình duyệt gõ `http://<IP_UBUNTU>:1882` để cấu hình Node-RED bằng giao diện kéo thả.
+
+<img width="1920" height="1026" alt="{AADF4540-2496-4733-8EB3-78865F29F987}" src="https://github.com/user-attachments/assets/d21dc690-913c-4a6f-8688-428f917606e5" /></p>
+
+**BƯỚC 4**: Cài đặt thư viện phụ trợ trong Node-RED:
+
+Vào góc phải trên cùng -> Manage palette -> Thẻ Install -> Tìm và cài các node:
+
+- node-red-node-mysql (Kết nối MariaDB)
+  
+<img width="1277" height="691" alt="{6BAE5BAB-FDEE-4A28-8E5D-E33140B48FC7}" src="https://github.com/user-attachments/assets/f35a7a5f-7d72-4933-aafc-d95d9815018e" /></p>
+
+- node-red-contrib-influxdb (Kết nối InfluxDB)
+
+<img width="1593" height="738" alt="{04DDCF93-07AF-4A86-8816-9D7B0960E854}" src="https://github.com/user-attachments/assets/b6a544c1-3c79-4cae-897f-5e733455abb9" /></p>
+
+- node-red-contrib-telegrambot (Gửi tin nhắn Telegram)
+
+<img width="1277" height="681" alt="{55196EB6-6A84-446D-ACE7-8FD90531679E}" src="https://github.com/user-attachments/assets/67b07010-50d2-4b2e-a00c-9402e75b846c" /></p>
 
 
 
