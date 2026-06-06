@@ -233,3 +233,24 @@ Vào góc phải trên cùng -> Manage palette -> Thẻ Install -> Tìm và cài
 Luồng A: Tạo bảng MariaDB
 
 Luồng B: Lấy dữ liệu API và Lưu vào các Database
+
+**Bước 6**: Logic Kiểm tra Dữ Liệu và Bắn Alert Telegram
+
+a) Chuẩn bị thông tin Telegram (Lấy Token và Chat ID)
+
+- Lấy Bot Token: * Bạn mở ứng dụng Telegram, tìm kiếm @BotFather (có tích xanh). Gõ lệnh /newbot, đặt tên cho bot và đặt username cho bot (phải kết thúc bằng chữ bot, ví dụ: duong_monitor_bot).
+
+- @BotFather sẽ gửi cho bạn một chuỗi kí tự gọi là HTTP API Token (Dạng như: 123456789:ABCdefGhIJKlmNoPQRsTUV). Hãy lưu lại chuỗi này.
+
+<img width="1285" height="691" alt="image" src="https://github.com/user-attachments/assets/cf3eedf7-60c9-4036-9447-3985860066ec" /></p>
+
+b) Lấy Chat ID nhóm
+
+- Tạo một Group Telegram mới, thêm tài khoản của bạn (và ID 1875746636) cùng con Bot vừa tạo vào nhóm.
+
+<img width="1920" height="1027" alt="image" src="https://github.com/user-attachments/assets/0c3c8930-af10-443f-af87-1e94c6492420" /></p>
+
+- Tìm kiếm và mời thêm bot @RawDataBot vào nhóm này. Ngay khi vào nhóm, nó sẽ trả về một đoạn code chữ chứa thông tin nhóm. Bạn tìm dòng "id": -100xxxxxxxxxx. Đó chính là Chat ID của nhóm bạn (bắt buộc phải có dấu trừ - ở đầu nhé).
+
+- Sau khi lấy xong ID, bạn có thể kích @RawDataBot ra khỏi nhóm cho đỡ vướng.
+
