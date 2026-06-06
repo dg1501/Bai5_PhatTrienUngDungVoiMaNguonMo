@@ -217,3 +217,19 @@ Vào góc phải trên cùng -> Manage palette -> Thẻ Install -> Tìm và cài
 - Node Function (Phân tách dữ liệu): Viết code JS nhỏ để lấy giá trị số:
 
 <img width="1920" height="1026" alt="{3A8664C0-ACC2-4159-959B-21F951C37A93}" src="https://github.com/user-attachments/assets/1b240de5-4ac3-4fe8-9511-e8b0b8e8e08d" /></p>
+
+- Tạo Bảng trong MariaDB: Dùng Node MySQL chạy câu lệnh này một lần duy nhất để tạo bảng:
+
+<img width="1920" height="1030" alt="{E50DE4E9-F7DD-479E-AD4F-A75F1AAD9B76}" src="https://github.com/user-attachments/assets/fa4bbf0b-355e-41e5-a460-b25ae5a6755b" /></p>
+
+- Thêm node template vào Flow
+
+<img width="1920" height="1027" alt="{A6AB7496-D598-4A0B-9880-680A70AF051A}" src="https://github.com/user-attachments/assets/b65af825-0d36-4339-901d-573b916f6692" /></p>
+
+-> Sơ đồ cuối cùng 
+
+<img width="1920" height="1032" alt="{820AAA33-30EB-4F73-8C16-97BD41644D81}" src="https://github.com/user-attachments/assets/9ae08e29-3f14-465f-8d8b-20bb646e63bc" /></p>
+
+Luồng A: Tạo bảng MariaDB
+
+Luồng B: Lấy dữ liệu API và Lưu vào các Database
