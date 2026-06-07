@@ -258,7 +258,41 @@ b) Lấy Chat ID nhóm
 
 - Sau khi lấy xong ID, bạn có thể kích @RawDataBot ra khỏi nhóm cho đỡ vướng.
 
-c) Kéo thêm các Node sau từ đầu ra của Node Functio
+c) Kéo thêm các Node sau từ đầu ra của Node Function.
 
 Bước 1: Kéo và cấu hình Node switch (Bộ lọc điều kiện giá)
+
+Bước 2: Cấu hình node switch
+
+<img width="1920" height="1033" alt="{8D872F53-056B-408A-B46E-F55BDF3DBF92}" src="https://github.com/user-attachments/assets/17c52cbb-a895-406b-8426-7c8b273cc960" /></p>
+
+- Property: msg.currentPrice
+
+- Nhánh 1 (Dấu <): Điền số mức thấp, ví dụ 60000
+
+- Nhánh 2 (Bấm nút + add để thêm dòng, chọn dấu >): Điền số mức cao, ví dụ 75000
+
+Bước 3: Node change số 1 (Nối vào chấm tròn trên của node switch)
+
+<img width="1920" height="1019" alt="{F92DDCA4-F091-417A-B712-FAE160F048FA}" src="https://github.com/user-attachments/assets/876890ff-7a76-4930-9bc2-11b9dfca453d" /></p>
+
+Bước 4: Node change số 2 (Nối vào chấm tròn dưới của node switch)
+
+<img width="1920" height="1022" alt="{3C0C9869-7B8B-4B9C-BEE0-E2C41C7D24ED}" src="https://github.com/user-attachments/assets/3ab3ab09-57b8-4041-afdd-69caf634691e" /></p>
+
+Bước 5: Node Telegram Sender
+
+- Bot: Chọn cấu hình Bot (Tên bất kỳ + Dán chuỗi Token lấy từ @BotFather).
+
+- Chat ID: Dán chính xác mã số nhóm chat
+
+<img width="1920" height="1026" alt="{16A09556-CB5F-4876-B0C0-9BF09C11F7FD}" src="https://github.com/user-attachments/assets/e5355e0b-1771-4bd0-a20d-e6215d62b250" /></p>
+
+---> Sơ đồ tổng thể 
+
+<img width="1920" height="1028" alt="{3AC24D1F-A8F4-4039-A828-0BCC61BB546B}" src="https://github.com/user-attachments/assets/c41b54ba-e682-4ada-9de5-0260de5939b5" /></p>
+
+### 5. Test
+
+
 
