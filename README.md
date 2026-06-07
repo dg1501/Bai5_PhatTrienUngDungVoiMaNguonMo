@@ -294,5 +294,9 @@ Bước 5: Node Telegram Sender
 
 ### 5. Test
 
+<img width="1920" height="1034" alt="{8B46EE6F-3CCB-4F22-984A-DC26A03A3802}" src="https://github.com/user-attachments/assets/eae75cba-da23-4cb0-9489-95f79e5bce2e" /></p>
+
+
+
 
 
