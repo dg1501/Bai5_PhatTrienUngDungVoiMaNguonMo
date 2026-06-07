@@ -250,7 +250,15 @@ b) Lấy Chat ID nhóm
 
 <img width="1920" height="1027" alt="image" src="https://github.com/user-attachments/assets/0c3c8930-af10-443f-af87-1e94c6492420" /></p>
 
+<img width="1920" height="1023" alt="{AF2F9E4E-19AF-406C-B033-3F7A5E97701B}" src="https://github.com/user-attachments/assets/b9b52fe6-0586-457e-aeec-6101fbea641f" /></p>
+
 - Tìm kiếm và mời thêm bot @RawDataBot vào nhóm này. Ngay khi vào nhóm, nó sẽ trả về một đoạn code chữ chứa thông tin nhóm. Bạn tìm dòng "id": -100xxxxxxxxxx. Đó chính là Chat ID của nhóm bạn (bắt buộc phải có dấu trừ - ở đầu nhé).
 
+<img width="1917" height="233" alt="{C81ECEA5-8B00-47CB-9508-2844A3EF482B}" src="https://github.com/user-attachments/assets/2178c9c9-0b68-432a-8f3c-16a56ed931f2" /></p>
+
 - Sau khi lấy xong ID, bạn có thể kích @RawDataBot ra khỏi nhóm cho đỡ vướng.
+
+c) Kéo thêm các Node sau từ đầu ra của Node Functio
+
+Bước 1: Kéo và cấu hình Node switch (Bộ lọc điều kiện giá)
 
