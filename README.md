@@ -346,20 +346,13 @@ Bước 5: Node Telegram Sender
 
 - Mở file web/index.html của ra, dán đè link mới này vào vị trí thẻ <iframe>
 
+<img width="1091" height="607" alt="{C00D0B7E-B34F-4692-B40D-D5C20A354E11}" src="https://github.com/user-attachments/assets/38af4210-5124-477e-be4e-259bb78c06ad" /></p>
 
 ### 6. Test
 
 <img width="1920" height="1020" alt="{9E8BC13D-AF5A-4670-AAB4-F166F3A9E5D9}" src="https://github.com/user-attachments/assets/efab9d20-199e-4c99-843b-50364bc60ca3" /></p>
 
 <img width="1920" height="1080" alt="{8171C199-50B6-4DBC-9C57-E6919F7A6811}" src="https://github.com/user-attachments/assets/25ebcfb5-05e8-4eb1-8f4e-c4ae882af0bd" /></p>
-
-- Truy cập: `http://192.168.1.81:3000` để lấy link nhúng "Xịn" từ Grafana bỏ vào file index.html
-
-  <img width="1920" height="1027" alt="{1EEC26F6-8FA5-4EB3-9536-A97F3D6F20C7}" src="https://github.com/user-attachments/assets/f4211223-2c53-40fa-9e35-c65ddfebd382" />
-
-Vào mục Dashboards $\rightarrow$ Mở cái Dashboard chứa biểu đồ Bitcoin bạn vừa làm lên
-
-
 
 - Truy cập: `http://192.168.1.81` vào Nginx (Web Server) để có cái nhìn trực quan hơn về hệ thống.
 
