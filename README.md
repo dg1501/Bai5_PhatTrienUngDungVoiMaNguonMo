@@ -294,6 +294,8 @@ Bước 5: Node Telegram Sender
 
 ### 5. Kết nối Grafana với Cơ sở dữ liệu MariaDB
 
+**Bước 1**: Kết nối
+
 - Truy cập: `http://192.168.1.81:3000
 
 - Chọn Connections -> Chọn Data sources.
@@ -313,6 +315,37 @@ Bước 5: Node Telegram Sender
 --> Chọn **Save & test**. Nếu hiện thông báo xanh lá cây báo kết nối thành công là OK!
 
 <img width="1920" height="1038" alt="{5C153CFB-81F3-4D4D-A389-C7E2EF1EFD38}" src="https://github.com/user-attachments/assets/c2c8be9b-34df-4e94-9bd5-f4b9c68e9dfd" /></p>
+
+**Bước 2**: Tạo Dashboard vẽ Biểu đồ Bitcoin
+
+- Quay lại menu bên trái, bấm vào Dashboards -> Bấm nút xanh Create Dashboard -> Chọn Add visualization.
+
+<img width="1920" height="1024" alt="{5096E0D4-DEA9-4E39-B8BC-04F58496D30D}" src="https://github.com/user-attachments/assets/a9257bfd-c5d0-4f5c-acc3-710d5ed93fbc" /></p>
+
+<img width="1920" height="1024" alt="{EED49BA4-CB5A-4401-A69A-4A90C876FFD5}" src="https://github.com/user-attachments/assets/0e2f07e6-b0f2-4499-abc8-36950e6f88d2" /></p>
+
+- Một ô cửa sổ nhỏ hiện lên hỏi bạn muốn chọn nguồn dữ liệu nào, hãy click chọn vào chữ MySQL
+
+<img width="1224" height="728" alt="{B9F629B8-F2EB-4FFB-B175-58E10A0157F8}" src="https://github.com/user-attachments/assets/61c8de5f-5e58-44a9-b83f-7e833f4a0830" /></p>
+
+- Thêm code -> Run query
+
+<img width="1920" height="1026" alt="{3FB2DB46-A8E3-4FD9-8DAE-C5996CFBB829}" src="https://github.com/user-attachments/assets/dfb586fe-dd89-463a-b51c-8bb35b0da216" /></p>
+
+<img width="1920" height="1023" alt="{6D822E86-3A10-44E6-BA5E-80A28B06CDA0}" src="https://github.com/user-attachments/assets/f9523835-6cba-4531-aae0-7bf9c0643d12" /></p>
+
+**Bước 3**: Lấy mã nhúng đưa vào Web
+
+- Di chuột vào phần tiêu đề của Panel biểu đồ bạn vừa tạo -> Click vào dấu 3 chấm đứng ở góc phải của Panel -> Chọn Share -> Chọn tab Embed.
+
+<img width="1541" height="730" alt="{CFC80D02-346A-4F2A-859D-C4E342B61342}" src="https://github.com/user-attachments/assets/b49f4aed-025a-448e-8abd-9f476f881540" /></p>
+
+<img width="857" height="613" alt="{B7603AB6-1C1F-455D-BFED-5DAB9700B2CE}" src="https://github.com/user-attachments/assets/f6da9cc7-a251-4d75-b4fe-89f395e22da6" /></p>
+
+- Copy đoạn link nằm gọn trong cặp dấu ngoặc kép src="..."
+
+- Mở file web/index.html của ra, dán đè link mới này vào vị trí thẻ <iframe>
+
 
 ### 6. Test
 
