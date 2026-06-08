@@ -384,3 +384,44 @@ Vì bài tập yêu cầu xuất các container, chúng ta sẽ thực hiện Co
 
 - sudo docker save -o grafana_backup.tar grafana_backup:v1
 
+<img width="1355" height="733" alt="{FEAE7D86-A696-4E92-AA58-B96DF14EBE2D}" src="https://github.com/user-attachments/assets/930760a7-94c4-4d97-a881-481e918f1913" /></p>
+
+2. Bước 2: Xóa sạch mọi container đang chạy
+
+`sudo docker compose down`
+
+<img width="1350" height="738" alt="{4CB6F152-6C05-4960-8391-96A25AA2EBFF}" src="https://github.com/user-attachments/assets/f015c828-329a-4d79-b9a4-189856289b0a" /></p>
+
+3. Load lại từ file nén và khôi phục hệ thống
+
+3.1. Nạp lại 4 Image từ file .tar vào Docker:
+
+<img width="1353" height="743" alt="{3DFD2A98-4BFB-4036-AE54-B008DA488E58}" src="https://github.com/user-attachments/assets/33b5a0b1-67fb-43d0-bd3b-eab968dea25c" /></p>
+
+3.2. Sửa file docker-compose.yml để chạy từ ảnh backup:
+
+Tìm đến dòng image: của 4 dịch vụ và sửa chính xác thành tên image backup của bạn:
+
+- Dịch vụ mariadb: image: mariadb_backup:v1
+
+<img width="528" height="368" alt="{A4443612-14DF-4065-BA76-311BEDD19B5E}" src="https://github.com/user-attachments/assets/ca37d60d-78e4-4631-ae6d-623cded9c065" /></p>
+
+- Dịch vụ influxdb: image: influxdb_backup:v1
+
+<img width="616" height="345" alt="{0CE425CD-34DB-445C-B45D-5D69DD5974BD}" src="https://github.com/user-attachments/assets/25db829b-ed36-4945-8f4c-b919ebc069f5" /></p>
+
+- Dịch vụ nodered: image: nodered_backup:v1
+
+<img width="734" height="422" alt="{DBE427D9-3074-4964-A203-6EA105B9173F}" src="https://github.com/user-attachments/assets/01d99298-c3ac-448b-98e2-0a0972d31358" /></p>
+
+- Dịch vụ grafana: image: grafana_backup:v1
+
+<img width="742" height="420" alt="{32CD1AC3-94E4-46B2-B4F6-B3584A2C329B}" src="https://github.com/user-attachments/assets/c4842264-721a-44bd-a30b-78e9af103cdc" /></p>
+
+3.3. Khởi chạy lại hệ thống:
+
+`sudo docker compose up -d`
+
+<img width="1356" height="737" alt="{81BEBED0-D70E-40DF-9F1E-7365057C6F83}" src="https://github.com/user-attachments/assets/12ee4f43-38d0-4097-9782-3f0f0c223e47" /></p>
+
+
