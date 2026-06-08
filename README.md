@@ -356,8 +356,31 @@ Bước 5: Node Telegram Sender
 
 - Truy cập: `http://192.168.1.81` vào Nginx (Web Server) để có cái nhìn trực quan hơn về hệ thống.
 
+<img width="1920" height="1025" alt="{CD8D13EB-4ED2-4685-ACB4-352CDE036535}" src="https://github.com/user-attachments/assets/5422a37f-e8c9-4306-9b77-40e17a5f4683" /></p>
 
+### 7. Thực hành Xuất, Xóa và Khôi Phục Hệ Thống
 
+1. Xuất tất cả các container ra file nén
 
+Vì bài tập yêu cầu xuất các container, chúng ta sẽ thực hiện Commit trạng thái container hiện tại thành Image rồi Save ra file .tar
 
+**Tạo ảnh snapshot từ các container đang chạy**
+
+- docker commit monitor_mariadb mariadb_backup:v1
+
+- docker commit monitor_influxdb influxdb_backup:v1
+
+- docker commit monitor_nodered nodered_backup:v1
+
+- docker commit monitor_grafana grafana_backup:v1
+
+**Docker nén các Image thành các file lưu trữ trực tiếp trong thư mục ~/app-monitor**
+
+- sudo docker save -o mariadb_backup.tar mariadb_backup:v1
+
+- sudo docker save -o influxdb_backup.tar influxdb_backup:v1
+
+- sudo docker save -o nodered_backup.tar nodered_backup:v1
+
+- sudo docker save -o grafana_backup.tar grafana_backup:v1
 
