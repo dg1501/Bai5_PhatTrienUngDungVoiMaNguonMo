@@ -292,11 +292,43 @@ Bước 5: Node Telegram Sender
 
 <img width="1920" height="1028" alt="{3AC24D1F-A8F4-4039-A828-0BCC61BB546B}" src="https://github.com/user-attachments/assets/c41b54ba-e682-4ada-9de5-0260de5939b5" /></p>
 
-### 5. Test
+### 5. Kết nối Grafana với Cơ sở dữ liệu MariaDB
+
+- Truy cập: `http://192.168.1.81:3000
+
+- Chọn Connections -> Chọn Data sources.
+
+<img width="1920" height="1025" alt="{2C7A10D3-9AC3-40C8-879E-F396471B8F84}" src="https://github.com/user-attachments/assets/cc84570a-3c3b-4c33-93ba-c85deee66d58" /></p>
+
+- Bấm vào nút Add data source
+
+- Tìm và chọn MySQL (vì MariaDB dùng chung driver với MySQL).
+
+<img width="1920" height="1036" alt="{CC83AC0D-4554-4A83-97CB-BF67AEF2FB5A}" src="https://github.com/user-attachments/assets/f3640521-b1b0-47c3-abd6-c64196d7de6d" /></p>
+
+- Điền thông tin
+
+<img width="1920" height="1028" alt="{84CCDC20-2A7A-415B-9416-A53552968A75}" src="https://github.com/user-attachments/assets/81cca643-e23f-40b4-ad16-06aa1408792c" /></p>
+
+--> Chọn **Save & test**. Nếu hiện thông báo xanh lá cây báo kết nối thành công là OK!
+
+<img width="1920" height="1038" alt="{5C153CFB-81F3-4D4D-A389-C7E2EF1EFD38}" src="https://github.com/user-attachments/assets/c2c8be9b-34df-4e94-9bd5-f4b9c68e9dfd" /></p>
+
+### 6. Test
 
 <img width="1920" height="1020" alt="{9E8BC13D-AF5A-4670-AAB4-F166F3A9E5D9}" src="https://github.com/user-attachments/assets/efab9d20-199e-4c99-843b-50364bc60ca3" /></p>
 
 <img width="1920" height="1080" alt="{8171C199-50B6-4DBC-9C57-E6919F7A6811}" src="https://github.com/user-attachments/assets/25ebcfb5-05e8-4eb1-8f4e-c4ae882af0bd" /></p>
+
+- Truy cập: `http://192.168.1.81:3000` để lấy link nhúng "Xịn" từ Grafana bỏ vào file index.html
+
+  <img width="1920" height="1027" alt="{1EEC26F6-8FA5-4EB3-9536-A97F3D6F20C7}" src="https://github.com/user-attachments/assets/f4211223-2c53-40fa-9e35-c65ddfebd382" />
+
+Vào mục Dashboards $\rightarrow$ Mở cái Dashboard chứa biểu đồ Bitcoin bạn vừa làm lên
+
+
+
+- Truy cập: `http://192.168.1.81` vào Nginx (Web Server) để có cái nhìn trực quan hơn về hệ thống.
 
 
 
